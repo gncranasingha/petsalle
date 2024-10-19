@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductCard from '../ProductCard';
+import PetCard from '../PetCard';
 import { AiOutlineRight } from "react-icons/ai";
 
-const ProductsSection = () => {
-  const [products, setProducts] = useState([]);
+const NewPet = () => {
+  const [pets, setPets] = useState([]);
   const [showAll, setShowAll] = useState(false); 
 
   useEffect(() => {
    
-    axios.get('https://monitor-backend-rust.vercel.app/api/products')
+    axios.get('https://monitor-backend-rust.vercel.app/api/pets')
       .then(response => {
-        setProducts(response.data); 
+        setPets(response.data); 
       })
-      .catch(error => console.error('Error fetching products:', error));
+      .catch(error => console.error('Error fetching pets:', error));
   }, []);
 
   
   const handleViewMore = () => {
-    setShowAll(true); 
+    setShowAll(true);
   };
 
   return (
@@ -26,7 +26,7 @@ const ProductsSection = () => {
       <div className="flex justify-between items-center">
         <div>
           <h5 className="text-lg font-semibold">What's new?</h5>
-          <h1 className="text-2xl font-bold pb-5">Take A Look At Some Of Our Products</h1>
+          <h1 className="text-2xl font-bold pb-5">Take A Look At Some Of Our Pets</h1>
         </div>
         {!showAll && (
           <button 
@@ -38,14 +38,13 @@ const ProductsSection = () => {
         )}
       </div>
       
-     
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.slice(0, showAll ? products.length : 3).map(product => ( 
-          <ProductCard key={product.id} product={product} />
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {pets.slice(0, showAll ? pets.length : 4).map(pet => (
+          <PetCard key={pet.id} pet={pet} />
         ))}
       </div>
     </div>
   );
 }
 
-export default ProductsSection;
+export default NewPet;

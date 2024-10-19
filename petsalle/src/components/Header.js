@@ -18,9 +18,9 @@ export default function Header() {
     <Disclosure as="nav" className="bg-transparent backdrop-blur-md z-10 fixed w-full">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          {/* Header content */}
+        
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button */}
+           
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
@@ -51,7 +51,7 @@ export default function Header() {
             </div>
           </div>
           <div className="hidden md:flex items-center pr-2">
-            {/* Search Bar */}
+            
             <div className="relative flex items-center">
               <svg
                 className="w-5 h-5 text-gray-500 absolute left-3"
@@ -74,12 +74,12 @@ export default function Header() {
               />
             </div>
 
-            {/* Button */}
+          
             <button className="bg-[#003459] text-white rounded-3xl px-3 py-1 ml-5 hover:bg-blue-600">
               Join the Community
             </button>
 
-            {/* Select Dropdown */}
+          
             <select className="bg-transparent text-black focus:outline-none  pr-0 pl-2 mx-2">
               <option value="">VND</option>
               <option value="profile">Your Profile</option>

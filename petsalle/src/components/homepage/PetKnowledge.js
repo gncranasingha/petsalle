@@ -5,18 +5,17 @@ import { AiOutlineRight } from "react-icons/ai";
 
 const PetKnowledge = () => {
   const [pets, setPets] = useState([]);
-  const [showAll, setShowAll] = useState(false); // State to track if all pets should be shown
-
+  const [showAll, setShowAll] = useState(false);
   useEffect(() => {
-    // Fetch the pet data from the API using Axios
+   
     axios.get('https://monitor-backend-rust.vercel.app/api/pets')
       .then(response => {
-        setPets(response.data); // Store all pets in state
+        setPets(response.data);
       })
       .catch(error => console.error('Error fetching pets:', error));
   }, []);
 
-  // Function to toggle showing all pets
+  
   const handleViewMore = () => {
     setShowAll(true);
   };
@@ -29,13 +28,13 @@ const PetKnowledge = () => {
           <h1 className="text-2xl font-bold pb-5">Take A Look At Some Of Our Pets</h1>
         </div>
         <button 
-          onClick={handleViewMore} // Add click handler
+          onClick={handleViewMore} 
           className="px-4 py-2 bg-transparent text-[#003459] font-semibold border border-[#003459] hover:bg-white hover:text-[#003459] rounded-3xl flex items-center"
         >
           View More <AiOutlineRight className="ml-2" />
         </button>
       </div>
-      {/* Grid layout for pets, showing limited or all pets based on state */}
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {pets.slice(0, showAll ? pets.length : 3).map(pet => (
           <PetCard key={pet.id} pet={pet} />

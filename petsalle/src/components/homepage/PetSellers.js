@@ -8,7 +8,7 @@ import img6 from "../../assets/img6.png";
 import img7 from "../../assets/img7.png"; 
 
 const PetSellers = () => {
-  // Using imported images for pet images
+  
   const petImages = [
     img1,
     img2,
@@ -22,7 +22,7 @@ const PetSellers = () => {
   return (
     <div className="p-4">
       <div className="flex justify-between items-center mb-5">
-        <div className="flex items-center"> {/* Flex container for headings */}
+        <div className="flex items-center"> 
           <h5 className="text-lg font-semibold mr-2">Proud to be part of</h5>
           <h1 className="text-2xl font-bold">Pet Sellers</h1>
         </div>
@@ -31,7 +31,7 @@ const PetSellers = () => {
         </button>
       </div>
       
-      {/* Grid layout for pets */}
+     
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
         {petImages.map((image, index) => (
           <div key={index} className="overflow-hidden rounded-lg shadow-lg">
